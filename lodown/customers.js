@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 'use strict';
 
 var lodown = require("./lodown");
@@ -29,13 +27,13 @@ lodown.each(obj, print);
 var allCapNames = lodown.map(customers, function (customer) {
     return customer.name.toUpperCase();
 });
+print("All caps names:")
 print(allCapNames);
 
 ////////////////////////////////////////////////////////////////////////////////
 
 var allOverThirty = lodown.filter(customers, function(customer) {
-    print(customer.age);
-    return customer.age >= 30; 
+    return customer.age >= 30;
 });
 print("All Customers Over 30");
-print(allOverThirty);
+lodown.each(allOverThirty, function (c) {print(c.name)});
